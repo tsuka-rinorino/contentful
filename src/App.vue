@@ -9,7 +9,9 @@
 </script>
 
 
-<style>
+<style lang="scss">
+@import "@/assets/scss/app.scss";
+
 .app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

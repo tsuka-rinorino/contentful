@@ -11,6 +11,8 @@
     "@contentful/rich-text-html-renderer": "^13.4.0",
     "contentful": "^7.14.4",
     "core-js": "^3.6.4",
+    "normalize.css": "^8.0.1",
+    "open-color": "^1.7.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6"
   },
@@ -24,6 +26,8 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
     "lint-staged": "^9.5.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
