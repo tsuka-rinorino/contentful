@@ -2,7 +2,7 @@
   <div class="item-list">
     <v-wrap>
       <ul>
-        <li  v-for="item in items" :key="item.id">
+        <li v-for="item in items" :key="item.id">
           <router-link :to="`/items/${item.fields.slug}`">
             {{ item.fields.title }}
           </router-link>
