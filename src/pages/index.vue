@@ -1,6 +1,6 @@
 <template>
-  <div class="page page--index">
-    <v-item-list />
+  <div class="page page-index">
+    <v-item-list class="page-index__item-list" />
   </div>
 </template>
 
@@ -16,7 +16,11 @@ export default {
 </script>
 
 
-<style scoped>
-.page--index {
+<style lang="scss" scoped>
+.page-index {
+
+  &__item-list {
+    margin-top: 5rem;
+  }
 }
 </style>

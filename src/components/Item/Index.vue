@@ -4,7 +4,7 @@
       <h1 class="item__heading">{{ item.title }}</h1>
       <div class="item__meta">
         <time class="item__date">{{ item.createdAt | moment("YYYY-MM-DD") }}</time>
-        <v-tag v-if="item.tag[0]" class="item__tag" :tags="item.tag" />
+        <v-tag v-if="item.tag" class="item__tag" :tags="item.tag" />
       </div>
       <div class="item__body">
         <div v-html="item.intro" />
@@ -62,7 +62,6 @@ export default {
 
 <style lang="scss" scoped>
 .item {
-  margin-top: 5rem;
 
   &__heading {
     font-size: 1.375rem;
@@ -83,7 +82,7 @@ export default {
     font-size: 0.6875rem;
     line-height: 1;
     color: $oc-gray-6;
-    margin-bottom: 0.5rm;
+    margin-bottom: 0.5rem;
   }
 
   &__tag {

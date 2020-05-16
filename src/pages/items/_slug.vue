@@ -1,5 +1,5 @@
 <template>
-  <div class="page page--slug">
+  <div class="page page-slug">
     <v-item />
   </div>
 </template>
@@ -17,6 +17,7 @@ export default {
 
 
 <style scoped>
-.page--index {
+.page-slug {
+  margin-top: 5rem;
 }
 </style>
