@@ -1,11 +1,19 @@
 <template>
   <div id="app" class="app">
+    <v-header />
     <router-view />
   </div>
 </template>
 
 
 <script>
+import Header from '@/components/header/index.vue';
+
+export default {
+  components: {
+    'v-header': Header,
+  },
+};
 </script>
 
 
@@ -13,11 +21,6 @@
 @import "@/assets/scss/app.scss";
 
 .app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
 }
 </style>
