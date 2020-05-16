@@ -12,12 +12,22 @@ import client from '@/plugins/contentful';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 export default {
+  head: {
+    title() {
+      return {
+        inner: this.head.title,
+      };
+    },
+  },
   mixins: [MixinContentful],
   components: {
     'v-item': Item,
   },
   data() {
     return {
+      head: {
+        title: '',
+      },
       item: {},
     };
   },
@@ -37,6 +47,8 @@ export default {
           this.$set(this.item, 'intro', documentToHtmlString(this.item.intro));
           this.$set(this.item, 'content', documentToHtmlString(this.item.content));
           this.$set(this.item, 'code', this.unescapeHTML(documentToHtmlString(this.item.code)));
+          this.$set(this.head, 'title', this.item.title);
+          this.$emit('updateHead');
         });
     },
   },
