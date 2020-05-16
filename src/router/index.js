@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: '/', component: () => import('../pages/Index.vue') },
+  { path: '/items/:slug', component: () => import('../pages/items/_slug.vue') },
 ];
 
 const router = new VueRouter({
