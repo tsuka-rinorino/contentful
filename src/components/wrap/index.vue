@@ -9,7 +9,7 @@
 
 <style lang="scss" scoped>
 .wrap {
-  width: 640px;
+  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
