@@ -1,16 +1,44 @@
 <template>
   <div class="page page-slug">
-    <v-item />
+    <v-item :item="item" />
   </div>
 </template>
 
 
 <script>
+import MixinContentful from '@/mixins/contentful';
 import Item from '@/components/item/index.vue';
+import client from '@/plugins/contentful';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 export default {
+  mixins: [MixinContentful],
   components: {
     'v-item': Item,
+  },
+  data() {
+    return {
+      item: {},
+    };
+  },
+  created() {
+    this.get();
+  },
+  methods: {
+    get() {
+      client.getEntries({
+        content_type: 'post',
+        'fields.slug': this.$route.params.slug,
+      })
+        .then((response) => {
+          this.item = response.items[0].fields;
+          this.item.createdAt = response.items[0].sys.createdAt;
+          this.item.updatedAt = response.items[0].sys.updatedAt;
+          this.$set(this.item, 'intro', documentToHtmlString(this.item.intro));
+          this.$set(this.item, 'content', documentToHtmlString(this.item.content));
+          this.$set(this.item, 'code', this.unescapeHTML(documentToHtmlString(this.item.code)));
+        });
+    },
   },
 };
 </script>

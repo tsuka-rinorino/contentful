@@ -20,30 +20,15 @@
 <script>
 import Wrap from '@/components/wrap/index.vue';
 import Tag from '@/components/tag/index.vue';
-import client from '../../plugins/contentful';
 
 export default {
   components: {
     'v-wrap': Wrap,
     'v-tag': Tag,
   },
-  data() {
-    return {
-      items: {},
-    };
-  },
-  created() {
-    this.get();
-  },
-  methods: {
-    get() {
-      client.getEntries({
-        content_type: 'post',
-        order: '-sys.createdAt',
-      })
-        .then((response) => {
-          this.items = response.items;
-        });
+  props: {
+    items: {
+      type: Array,
     },
   },
 };
