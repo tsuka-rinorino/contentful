@@ -1,18 +1,24 @@
 <template>
   <div class="item">
-    {{ item.title }}
-    <div v-html="item.content" />
-    <div v-html="item.code" />
+    <v-wrap>
+      {{ item.title }}
+      <div v-html="item.content" />
+      <div v-html="item.code" />
+    </v-wrap>
   </div>
 </template>
 
 <script>
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import MixinContentful from '@/mixins/contentful';
-import client from '../../plugins/contentful';
+import client from '@/plugins/contentful';
+import Wrap from '@/components/wrap/index.vue';
 
 export default {
   mixins: [MixinContentful],
+  components: {
+    'v-wrap': Wrap,
+  },
   data() {
     return {
       item: {},

@@ -1,6 +1,10 @@
 <template>
   <header class="header">
-    <h1 class="header__title">{{ title }}</h1>
+    <h1 class="header__title">
+      <router-link class="header__link" to="/">
+        {{ title }}
+      </router-link>
+    </h1>
   </header>
 </template>
 
@@ -28,6 +32,14 @@ export default {
     letter-spacing: 0;
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  &__link {
+    color: $body-color;
+    &:hover {
+      text-decoration: none;
+      color: $oc-blue-6;
+    }
   }
 }
 </style>
