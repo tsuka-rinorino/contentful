@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  publicPath: '/docs',
+  publicPath: '/contentful/docs',
   outputDir: './docs',
   configureWebpack: {
     resolve: {
