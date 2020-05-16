@@ -1,16 +1,16 @@
 <template>
   <div class="page page--index">
-    <ItemList />
+    <v-item-list />
   </div>
 </template>
 
 
 <script>
-import ItemList from '@/components/ItemList/Index.vue';
+import ItemList from '@/components/item-list/index.vue';
 
 export default {
   components: {
-    ItemList,
+    'v-item-list': ItemList,
   },
 };
 </script>
