@@ -7,6 +7,7 @@
         <v-tag v-if="item.tag[0]" class="item__tag" :tags="item.tag" />
       </div>
       <div class="item__body">
+        <div v-html="item.intro" />
         <div v-html="item.content" />
         <div v-html="item.code" />
       </div>
@@ -46,6 +47,7 @@ export default {
           this.item = response.items[0].fields;
           this.item.createdAt = response.items[0].sys.createdAt;
           this.item.updatedAt = response.items[0].sys.updatedAt;
+          this.$set(this.item, 'intro', documentToHtmlString(this.item.intro));
           this.$set(this.item, 'content', documentToHtmlString(this.item.content));
           this.$set(this.item, 'code', this.unescapeHTML(documentToHtmlString(this.item.code)));
         });
