@@ -55,7 +55,7 @@ export default {
 </script>
 
 
-<style scoped>
+<style lang="scss" scoped>
 .page-slug {
   margin-top: 5rem;
 }
