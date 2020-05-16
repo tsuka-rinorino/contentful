@@ -11,7 +11,7 @@
         <div v-html="item.content" />
         <div v-html="item.code" />
       </div>
-      <v-author class="item__author" :author="item.user.fields" />
+      <v-author v-if="item.user" class="item__author" :author="item.user.fields" />
     </v-wrap>
   </article>
 </template>
