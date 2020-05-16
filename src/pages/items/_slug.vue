@@ -46,7 +46,6 @@ export default {
           this.item.updatedAt = response.items[0].sys.updatedAt;
           this.$set(this.item, 'intro', documentToHtmlString(this.item.intro));
           this.$set(this.item, 'content', documentToHtmlString(this.item.content));
-          this.$set(this.item, 'code', this.unescapeHTML(documentToHtmlString(this.item.code)));
           this.$set(this.head, 'title', this.item.title);
           this.$emit('updateHead');
         });
