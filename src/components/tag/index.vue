@@ -4,6 +4,7 @@
   </ul>
 </template>
 
+
 <script>
 export default {
   props: {
@@ -13,6 +14,7 @@ export default {
   },
 };
 </script>
+
 
 <style lang="scss" scoped>
 .tag {

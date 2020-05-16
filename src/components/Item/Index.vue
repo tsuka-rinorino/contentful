@@ -11,6 +11,7 @@
         <div v-html="item.content" />
         <div v-html="item.code" />
       </div>
+      <v-author class="item__author" :author="item.user.fields" />
     </v-wrap>
   </article>
 </template>
@@ -22,12 +23,14 @@ import MixinContentful from '@/mixins/contentful';
 import client from '@/plugins/contentful';
 import Wrap from '@/components/wrap/index.vue';
 import Tag from '@/components/tag/index.vue';
+import Author from '@/components/author/index.vue';
 
 export default {
   mixins: [MixinContentful],
   components: {
     'v-wrap': Wrap,
     'v-tag': Tag,
+    'v-author': Author,
   },
   data() {
     return {
@@ -80,7 +83,7 @@ export default {
     font-size: 0.6875rem;
     line-height: 1;
     color: $oc-gray-6;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.5rm;
   }
 
   &__tag {
@@ -101,6 +104,10 @@ export default {
         }
       }
     }
+  }
+
+  &__author {
+    margin-top: 4rem;
   }
 }
 </style>
